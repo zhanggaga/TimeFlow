@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/UploadPhoto.css" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <script src="scripts/UploadPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+</head>
+<body>
+    <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="no-display" id="btn_homepage" onclick="clickhref('HomePage.html')">首页</button>
+        <button class="no-display" id="btn_scan" onclick="clickhref('scan.html')">浏览</button>
+        <button class="no-display" id="btn_more"onclick="clickhref('more.html')">更多</button>
+        <input type="text"  id="search"  placeholder="搜索标签、用户" />
+        <button  id="user"  onclick="clickhref('albums.html')"></button>
+    </div>
+    <br /><br />
+   
+    <div id="selectphoto" class="com-display" >
+         <button  id="user1"></button>
+         <span class="nikename">摄影地理达人</span>
+        <form id='formFile' name='formFile' method="post" action="AddPhoto.aspx"
+    enctype="multipart/form-data">
+        <div id="content">
+            <div class="upload-img">
+            <input type="file" id="add2" name='fileUp' onchange="previewImage(this)" accept=".png,.jpg,.gif,.bmp"/>
+            <img src="img/add2.png" />
+             </div>
+            <span>添加一张照片</span>
+        </div>
+            </form>
+        <div id="btn">
+        <button  id="cancel" onclick="clickhref('HomePage.html')">取 消</button>
+        <button  id="confirm">发 布</button>
+            </div>
+    </div>
+        <br /><br />
+
+    <div id="processphoto" class="com-no-display" >
+         <button  id="user1"></button>
+         <span class="nikename">摄影地理达人</span>
+        <div id="preview">
+        </div>
+        <div id="process">
+            <br />
+             <button  class="clip"></button>
+             <button  class="filter"></button>
+             <button  class="watermark"></button>
+        </div>
+        <br />
+        <div id="label"  >
+            <input type="text"  id="addlabel" placeholder="添加标签"  /><br />
+            <img class="label" src="img/label.png"/>
+            <span class="label">电影海报</span> 
+            </div>
+        <div id="btn">
+        <button  id="cancel" onclick="clickhref('HomePage.html')">取 消</button>
+        <button  id="confirm" onclick="confirm()">发 布</button>
+            </div>
+    </div>
+    <br /><br />
+</body>
+</html>

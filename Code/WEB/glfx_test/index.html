@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<img src="image.jpg"id='artwork'data="image.jpg"/>
+		<button id="normal">normal</button><button id="toGray">toGray</button><button id="toReverse">toReverse</button><button id="brand">brand</button><button id="save">save</button>
+		<script src="alloyimage-1.1.js" type="text/javascript" charset="utf-8"></script>
+
+        <!--<script src="watermark.jquery.js"></script>-->
+        <script>
+		var load = false;
+		window.onload = function(){
+			if(!load) {
+				wmark.init({
+					/* config goes here */
+					"position": "top-right", // default "bottom-right"
+					"opacity": 50, // default 50
+					"className": "watermark", // default "watermark"
+					"path": "message_active_03.png"
+				});
+			
+				load = true;
+			}
+		}
+        </script>
+		<script type="text/javascript">
+		
+			var pics = document.getElementsByTagName("img");
+
+			$("#brand").click( function() {
+				
+				if($("img").hasClass("watermark")) {
+					return false;
+				}
+				$("img").addClass("watermark");
+				
+				var load = false;
+				if(!load) {
+					wmark.init({
+						/* config goes here */
+						"position": "top-right", // default "bottom-right"
+						"opacity": 50, // default 50
+						"className": "watermark", // default "watermark"
+						"path": "message_active_03.png"
+					});
+				
+					load = true;
+				}				
+			})
+
+				
+
+			$('#normal').click(function(){
+				var pic = $('#artwork')[0];
+				pic.src = $('#artwork').attr('data');
+			});
+			$('#toGray').click(function(){
+				var pic = $('#artwork')[0];
+				pic.src = $('#artwork').attr('src');
+				var picTranseObj = AlloyImage(pic);
+				picTranseObj.act('toGray').replace(pic);
+      AlloyImage(this).act("灰度处理").add(//添加一个图层上去
+            AlloyImage(this).act("灰度处理").act("反色").act("高斯模糊",5) , "颜色减淡"  
+      ).act("锐化").show();
+			});
+			$('#toReverse').click(function(){
+				var pic = $('#artwork')[0];
+				pic.src = $('#artwork').attr('data');
+				var picTranseObj = AlloyImage(pic);
+				picTranseObj.act('toReverse').replace(pic);
+			});
+			$("#save").click( function() {
+				window.location.href = $("img").attr("src");
+			});
+
+
+		</script>
+		<script src="watermark.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>

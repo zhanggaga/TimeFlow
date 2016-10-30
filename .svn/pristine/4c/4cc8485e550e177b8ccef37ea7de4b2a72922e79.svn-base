@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/admin.css" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <script src="scripts/admin.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+</head>
+<body>
+    <div id="content">
+       <img src="img/top-line.png" />
+       <img src="img/top-bold bar.png" />
+        <form action="Admin.aspx" method="post" name="admin_login" id="form_login">
+        <input  id="aid" name="admin_id" type="text" /><br />
+         <input  id="apwd" name="admin_pwd" type="password" />
+         <button type="submit" id="login">Login</button>
+            </form>
+        <img src="img/bottom-line.png" />
+       <img src="img/top-bold bar.png" />
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+﻿body{
+    background-color:rgb(237,237,239);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.com-no-display {
+    display: none;
+}
+.com-display {
+    display: block;
+}
+button {
+    cursor:pointer;
+}
+#navigation {
+    background-color: rgb(36,41,44);
+    height:80px;
+}
+#navigation #logo {
+    margin-left:120px;
+    margin-top:4px;
+}
+#navigation button {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	background-color: rgb(36,41,44);
+    position: relative;
+    bottom: 20px;
+	margin-left: 55px;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	border: 0;
+}
+#navigation button.display {
+	color: white;
+}
+#navigation button.no-display {
+	color: gray;
+}
+#navigation button:hover {
+	color: white;
+}
+#navigation input {
+    border-style: none;
+    width: 220px;
+    height: 27px;
+    background-color:black;
+    border-radius: 30px;
+    margin-left: 150px;
+    position: relative;
+    bottom: 22px;
+    padding-left:35px;
+    background-image:url(../img/fangda.png);
+    background-position-x:10px;
+    background-position-y:8px;
+    background-repeat:no-repeat;
+    color:white;
+}
+
+#navigation #user {
+    background-image: url(../img/user.png); 
+    width: 28px;
+    height: 30px;
+    margin-left: 130px;
+    position: relative;
+    bottom: 25px;
+}
+#selectphoto,#processphoto {
+    width: 800px;
+    margin:0 auto;
+    background-color: white;
+    border: 0;
+}
+#selectphoto {
+    height: 763px;
+}
+  #user1{
+    width: 60px;
+    height: 60px;
+	background-image: url(../img/user1.png); 
+    border:none;
+    margin-left: 15px;
+    margin-top:15px;
+}
+ span.nikename {
+    font-family: "微软雅黑";
+	font-size: 15px;
+    color:gray;
+    margin-left:17px;
+    position: relative;
+    bottom: 22px;
+}
+#content,#preview{
+    height:600px;
+    border:1px dashed rgba(198,198,198,0.6);
+    margin-left:100px;
+    margin-right:100px;
+}
+.upload-img{
+position: relative;
+margin-left :45%;
+margin-top:270px;
+overflow: hidden;
+}
+.upload-img img{
+width: 50px;
+height: 50px;
+}
+
+#add2{
+position: absolute;
+top: 0;
+left: 0;
+z-index: 100;
+width: 50px;
+height: 50px;
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+filter:alpha(opacity=0);
+-moz-opacity:0;
+-khtml-opacity: 0;
+opacity:0;
+background: none;
+border: none;
+cursor: pointer;
+}
+
+#content span {
+    font-family: "微软雅黑";
+	font-size: 15px;
+    color:gray;
+    margin-left:42%
+
+}
+#btn button{
+    padding:0px;
+    text-align:center;
+    word-spacing:10px;
+    width:90px;
+    height:38px;
+    border:0;
+    background-color: #8db800;
+	color: white;
+    font-family: "微软雅黑";
+	font-size: 15px;
+}
+#cancel {
+    margin-left: 100px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#confirm {
+    margin-left:410px;
+    margin-bottom:20px;
+}
+#process  .clip{
+     width: 40px;
+     height: 38px;
+     background-image: url(../img/clip.png);
+     background-color:white;
+     border: none;
+     margin-left: 150px;
+}
+#process  .filter {
+     width: 40px;
+     height: 40px;
+     background-image: url(../img/filter.png);
+     background-color:white;
+     border: none;
+     margin-left: 170px;
+ 
+}
+#process  .watermark {
+     width: 36px;
+     height: 37px;
+     background-image: url(../img/watermark.png);
+     background-color:white;
+     border: none;
+     margin-left: 170px;
+    
+}
+#label{
+    border-top:1px solid rgba(198,198,198,0.6);
+}
+#addlabel {
+    margin-left: 100px;
+    margin-top: 20px;
+    width:600px;
+    height:30px;
+
+}
+#label img {
+    margin-left: 100px;
+    margin-top:18px;
+}
+#label span.label {
+    font-family: "微软雅黑";
+	font-size: 10px;
+    color:rgb(198,198,198);
+    margin-left:10px;
+    position: relative;
+    top:-2px;
+}

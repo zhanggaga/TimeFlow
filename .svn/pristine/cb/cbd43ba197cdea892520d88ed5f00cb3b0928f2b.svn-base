@@ -1,0 +1,60 @@
+$("document").ready( function() {
+
+	$('form[name="register"]').validator({
+	    messages: {
+	        required: "请填写该字段",
+	        email: "请检查邮箱格式",
+	    },
+	    fields: {
+	        'username': 'required;email;'
+	    }
+	    msgWrapper: 'div',
+	    msgMaker: function(opt){
+	        return '<span class="'+ opt.type +'">' + opt.msg + '</span>';
+	    }
+	});
+	$("#container button").click(getDisplay);
+	$("#container #formContainer #register #putinArea input").blur(validtext);
+});
+function getDisplay() {
+	var class_name = "np-display";
+	$("#container button").each( function() {
+		$(this).addClass("no-display");
+	});
+	$(this).removeClass("no-display");
+	var click_btn = this.id;
+	switch(click_btn) {
+		case "btn_register" :
+			$("#register").css("display", "block")
+			$("#login").css("display","none");
+			break;
+		case "btn_login" :
+			$("#register").css("display","none");
+			$("#login").css("display","block");	
+			break;
+		default:
+			break;
+	}	
+}
+function validtext() {
+//	 alert(validateNonEmpty(this.value));
+	 var eidt_element = this.name;
+	 
+	 switch(eidt_element) {
+	 	case "username" :
+	 		break;
+	 	case "password" :
+	 		break;
+	 	case "re-password":
+	 		break;
+	 }
+}
+function validateNonEmpty(text) {
+	if(text) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+

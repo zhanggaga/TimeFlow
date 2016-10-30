@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html" />
+<!-- 指定以最新的IE版本模式来显示网页 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 针对360浏览器的内核调用,强制调用极速模式 -->
+<meta name="renderer" content="webkit" />
+
+<!--[if lt IE 10]>
+<meta name="renderer" content="ie-stand" />
+<![endif]-->
+<!--[if !IE]>
+<meta name="renderer" content="ie-stand" />
+<!<![endif]-->
+<!--[if lt IE 9]>
+      <script language="javascript" type="text/javascript" src="js/bootstrap/html5shiv.js"></script>
+<![endif]-->
+<!-- 确保设备能正常显示响应式页面 -->
+<!-- 告诉webkit内核浏览器初始缩放比例为1 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- 判断浏览器版本.IE8以下版本,bootstrap支持不了.加个提示 -->
+<!--[if IE]>      
+      <!--[if IE 6]>
+          <div class="ie"></div>
+      <![endif]-->
+<!-- 判断浏览器版本IE6以下版本 -->
+<!--[if lt IE 6]> 
+           <div class="ie"></div>
+      <![endif]-->
+<!--[if IE 7]>
+           <div class="ie"></div>
+<![endif]-->
+
+
+<title>index</title>
+<!-- 更换第三方图标库,Font Awesome <i class="icon-magic">-->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<link rel="bookmark"  type="image/x-icon"  href="TimeFlow.ico"/>
+</head>
+
+<!-- Add fancyBox main JS and CSS files -->
+<script>
+function clickhref(path) {
+	window.location.href = path;
+	
+}
+
+</script>
+    
+</head>
+<body>
+<div id="navigation">
+<img id="logo" src="img/logo.png" />
+<button class="no-display" id="btn_homepage" onclick="clickhref('HomePage.html')">首页</button>
+<button class="no-display" id="btn_scan" onclick="clickhref('scan.html')">浏览</button>
+<button class="no-display" id="btn_more"onclick="clickhref('userInfo.html')">个人信息</button>
+<input type="text"  id="search"  placeholder="搜索标签、用户" />
+<button  id="user"  onclick="clickhref('photos.html')"></button>
+</div>
+<div class="container">
+    <!--<div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">
+            <a class="fancy" href="images/banner1.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">
+                <img src="images/banner1.jpg"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3  fancybox img-responsive">
+            <a class="fancy" href="images/banner2.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp">
+                 <img src="images/banner2.jpg"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3  fancybox img-responsive">
+            <a class="fancy" href="images/banner1.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon">
+                 <img src="images/banner1.jpg"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3  fancybox img-responsive">
+            <a class="fancy" href="images/banner2.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno">
+                 <img src="images/banner2.jpg"/>
+            </a>
+        </div>
+    </div>-->
+</div>
+
+<script src="js/bootstrap/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/bootstrap/respond.min.js"></script>
+    <![endif]-->
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/bootstrap/ie10-viewport-bug-workaround.js"></script>
+<script src="js/bootstrap/ie-emulation-modes-warning.js"></script>
+<!-- 对IE低版本的一个小技巧.禁止在IE模式下,直接本地文件浏览 -->
+<!--[if lt IE 9]><script src="js/bootstrap/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<script type="text/javascript" src="js/jquery.fancybox.js "></script>
+<!--缩略图样式-->
+<script type="text/javascript" src="js/jquery.fancybox-thumbs.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			var now_href = window.location.href;
+			var client_id = '';
+			if(now_href.indexOf("?clientID=")!=-1) {
+				var srcs = Array();
+				srcs = now_href.split("?clientID=",2);
+				client_id += "?clientID=" + srcs[1];
+			}
+			var json_table = "Table";
+			var json_ID = "ID";
+			var json_time = "Time";
+			var json_pic = "Pic";
+	$.ajaxSetup({   
+            async : false  
+        });
+			var end_url = "../TimeAxis.aspx";
+			$.post(end_url,
+			{
+				c_id: client_id
+			}, function (data) {
+				var getData = eval("(" + data + ")");
+				
+			    for(var i=0; i<getData[json_table].length; i++) {
+			    	var targetTable = '';
+			    	if(i%4==0) {
+			    		targetTable += '<div class="row"></div>';
+			    		$(".container").append(targetTable);
+			    		targetTable = '';
+			    	}
+			    		targetTable	+= '<div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">'
+			    								+ '<a class="fancy" href="' + getData[json_table][i][json_pic] +'" data-fancybox-group="gallery" title="' + getData[json_table][i][json_time] + '">'
+			    								+ '<img src="' + getData[json_table][i][json_pic] + '"/>'
+			    								+ '</a></div>';
+			    		$(".row").eq(i%4).append(targetTable);
+			    }
+			  });
+			  var url = "time";
+				$('.fancy').fancybox();
+			});
+//			$(".container")
+	</script>
+</body>
+</html>

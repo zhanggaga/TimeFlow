@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="styles/admin_comment.css" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <script src="scripts/admin_comment.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="no-display" id="btn_homepage" onclick="clickhref('admin_user.html')">用户管理</button>
+        <button class="display" id="btn_scan" onclick="clickhref('admin_comment.html')">消息管理</button>
+        <button class="no-display" id="btn_more"onclick="clickhref('admin_photo.html')">图片管理</button>
+        <button class="no-display" id="btn_logout"onclick="clickhref('admin.html')">退出</button>
+        <img  id="top" src="img/top.png"/>
+    </div>
+    <div id="content">
+        <table id="table_comment">
+  <tr >
+    <td class="col1">ID </td>
+    <td class="col2">PrintUserID</td>
+    <td class="col3">消息内容</td>
+    <td class="col4">时间</td> 
+    <td class="col5">操作管理</td> 
+     </tr>
+          
+     </table>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="gbk" />
+    <link rel="stylesheet" href="Styles/userInfo.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="TimeFlow.ico"/>
+    <link rel="stylesheet" href="Styles/jquery.tag-editor.css" />
+    <link rel="stylesheet" href="scripts/layer/skin/layer.css" />
+    <script type="text/javascript" src="scripts/jquery-1.7.2.min.js"></script>
+    <script src="scripts/ifLogin.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/userInfo.js"></script>
+    <script src="scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/jquery.tag-editor.min.js"></script>
+    <script src="scripts/jquery.tag-editor.js"></script>
+    <script src="scripts/search_keyWord.js" type="text/javascript" charset="utf-8"></script>
+    <title>时光流影</title>
+</head>
+<body>
+    <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="no-display" id="btn_homepage" onclick="clickhref('HomePage.html')">首页</button>
+        <button class="no-display" id="btn_scan" onclick="clickhref('scan.html')">浏览</button>
+        <button class="display" id="btn_more"onclick="clickhref('userInfo.html')">个人信息</button>
+        <input type="text"  id="search"  placeholder="搜索标签、用户" />
+        <button  id="user" onclick="clickhref('photos.html')"></button>
+        <img id="top" src="img/top.png" />
+    </div>
+    <div id="all">
+    <div id="add">
+        <button  id="add_btn" ></button><br />
+        <button class="tx">修改头像</button>
+    </div>
+    <div id="content">
+        <form action="ModifyInfo.aspx" method="post" name="userInfo" id="form1" >
+        <span>昵称:&nbsp;</span><input id="nn" type="text"  name="nickname" /><br /><br />
+         <span id="title_sex">性别:&nbsp;</span><div id="sex"><span>性别</span> <input type ="checkbox" name="sex" id='checkbox1' onclick = 'check(this)'value="M" /><span>男</span>
+  <input type ="checkbox" name="sex" id='checkbox2' onclick = 'check(this)' value="F"/><span>女</span><br /></div><br />
+        
+         
+       <span id="title_place">地址:&nbsp;</span> <div id="place">
+            <select id="id_countrySelect" name="countrySelect" ><option value="">国家</option><option value="中国">中国</option><option value="外国">外国</option></select>
+              <select id="id_provSelect" name="provSelect" onchange="set_city(this, document.getElementById('id_citySelect')); WYL();"><option value="0">省份</option><option value="北京">北京</option> 
+<option value="上海">上海</option> 
+<option value="天津">天津</option> 
+<option value="重庆">重庆</option> 
+<option value="河北">河北</option> 
+<option value="山西">山西</option> 
+<option value="辽宁">辽宁</option> 
+<option value="吉林">吉林</option> 
+<option value="黑龙江">黑龙江</option> 
+<option value="江苏">江苏</option> 
+<option value="浙江">浙江</option> 
+<option value="安徽">安徽</option> 
+<option value="福建">福建</option> 
+<option value="江西">江西</option> 
+<option value="山东">山东</option> 
+<option value="河南">河南</option> 
+<option value="湖北">湖北</option> 
+<option value="湖南">湖南</option> 
+<option value="广东">广东</option> 
+<option value="海南">海南</option> 
+<option value="四川">四川</option> 
+<option value="贵州">贵州</option> 
+<option value="云南">云南</option> 
+<option value="陕西">陕西</option> 
+<option value="甘肃">甘肃</option> 
+<option value="青海">青海</option> 
+<option value="内蒙古">内蒙古</option> 
+<option value="广西">广西</option> 
+<option value="西藏">西藏</option> 
+<option value="宁夏">宁夏</option> 
+<option value="新疆">新疆</option> 
+<option value="香港">香港</option> 
+<option value="澳门">澳门</option> 
+<option value="台湾">台湾</option> </select>
+  <select id="id_citySelect" name="citySelect"><option value="0">城市</option></select>
+        </div><br />
+         <span id="title_hobbit">爱好:&nbsp;</span>  <div style="padding :0 7px 0 5px;max-width:250px; margin-left: 36px;
+margin-top: -5px;">
+             <textarea id="label"name="label" style="display: none;"></textarea>
+            </div>
+            <br />
+            <button id="ok" type="submit">提 交</button>
+            <br /><br />
+        </form>
+    </div>
+     </div>
+</body>
+</html>

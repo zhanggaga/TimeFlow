@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DAL;
+using Model;
+using System.Data;
+
+namespace BLL
+{
+    public class RegisterBLL
+    {
+        RegisterDAL myDAL = new RegisterDAL();
+
+        /// <summary>
+        /// 用户注册
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public int addMail(Client user)
+        {
+            if (myDAL.mailTest(user) == 1)
+            {
+                return 2;
+            }
+            else
+            {
+                return myDAL.addMail(user);
+            }
+        }
+
+
+        public int addPhone(Client user)
+        {
+            if (myDAL.phoneTest(user) == 1)
+            {
+                return 2;
+            }
+            else
+            {
+                return myDAL.addPhone(user);
+            }
+        }
+
+    }
+}
+
+
+

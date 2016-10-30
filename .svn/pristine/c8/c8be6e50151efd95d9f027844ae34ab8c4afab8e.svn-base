@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DAL;
+using Model;
+using System.Data;
+using System.Text;
+using System.Net.Mail;
+using System.Net; 
+
+
+namespace BLL
+{
+    public class RegisterBLL
+    {
+        RegisterDAL myDAL = new RegisterDAL();
+
+        /// <summary>
+        /// 用户注册
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public int addMail(Client user)
+        {
+            if (myDAL.mailTest(user) == 1)
+            {
+                return 2;
+            }
+            else
+            {
+                return myDAL.addMail(user);
+            }
+        }
+
+
+        public int addPhone(Client user)
+        {
+            if (myDAL.phoneTest(user) == 1)
+            {
+                return 2;
+            }
+            else
+            {
+                return myDAL.addPhone(user);
+            }
+        }
+
+
+        public DataSet getUserID(Client user)
+        {
+            return myDAL.getUserID(user);
+        }
+
+
+
+        //public void sendMail(Client user, string email, string activeCode, int number)
+        //{
+        //    MailMessage mailMsg = new MailMessage();
+        //    mailMsg.From = new MailAddress("1421636811@qq.com");
+        //    mailMsg.To.Add(email);
+        //    mailMsg.Subject = "请激活注册";
+        //    //  int number = Convert.ToInt32(myDAL.getUserID(user).Tables[0].Rows[1]["ID"]);
+        //    StringBuilder contentBuilder = new StringBuilder();
+        //    contentBuilder.Append("请单击以下链接完成激活");
+        //    contentBuilder.Append("<a href='http://localhost:10259/active.aspx?activecode=" + activeCode + "&id=" + number + "'>激活</a>");
+        //    mailMsg.Body = contentBuilder.ToString();//拼接字符串 
+        //    mailMsg.IsBodyHtml = true;
+        //    SmtpClient client = new SmtpClient();
+        //    //发件方服务器地址 
+        //    client.Host = "smtp.qq.com";
+        //    client.Port = 25;
+        //    //mailMsg.IsBodyHtml = true; 
+        //    NetworkCredential credetial = new NetworkCredential();
+        //    credetial.UserName = "1421636811@qq.com";
+        //    credetial.Password = "gaga=jiajia15";
+        //    client.Credentials = credetial;
+        //    client.Send(mailMsg);
+        //}
+
+        //public int number1()
+        //{
+        //    RegisterBLL register = new RegisterBLL();
+        //    Client myUser = new Client();
+        //    DataSet ds = register.getUserID(myUser);
+        //    return Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
+        //} 
+
+
+    }
+}
+
+
+

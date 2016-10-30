@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+using System.Web;
+using System.Configuration;
+using Model;
+using System.Data;
+
+namespace DAL
+{
+    public class RegisterDAL
+    {
+        //数据库链接字符串
+        private string conn_string = System.Configuration.ConfigurationSettings.AppSettings["strConn"];
+
+
+        //验证邮箱
+        public int mailTest(Client user)
+        {
+            string comTxt_mail = string.Format("select * from Client where Mail='{0}'", user.Mail);
+            SqlDataReader list_mail = SqlHelper.ExecuteReader(conn_string, System.Data.CommandType.Text, comTxt_mail, null);
+
+            if (list_mail.HasRows == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+        //验证电话号码
+        public int phoneTest(Client user)
+        {
+
+            string comTxt_phone = string.Format("select * from Client where Phone='{1}'", user.Phone);
+            SqlDataReader list_phone = SqlHelper.ExecuteReader(conn_string, System.Data.CommandType.Text, comTxt_phone, null);
+
+            if (list_phone.HasRows == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+
+        //邮箱注册
+        public int addMail(Client user)
+        {
+            string comTxt_email = string.Format("INSERT INTO [TimeFlow].[dbo].[Client]([Mail],[Password]) VALUES ('{0}','{1}')", user.Mail, user.Password);
+            int i = SqlHelper.ExecuteNonQuery(conn_string, System.Data.CommandType.Text, comTxt_email, null);
+            if (i == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+        //电话号码注册
+        public int addPhone(Client user)
+        {
+            string comTxt_phone = string.Format("INSERT INTO [TimeFlow].[dbo].[Client]([ID],[],[Phone],[Password]) VALUES ('{0}','{1}' ,{2},'{3}')", user.ID, user.Mail, user.Phone, user.Password);
+            int j = SqlHelper.ExecuteNonQuery(conn_string, System.Data.CommandType.Text, comTxt_phone, null);
+            if (j == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+
+    }
+}

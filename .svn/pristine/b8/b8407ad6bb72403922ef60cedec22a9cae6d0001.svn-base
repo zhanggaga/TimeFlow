@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DAL;
+using Model;
+using System.Data;
+
+namespace BLL
+{
+    public class GetPhotoBLL
+    {
+        GetPhotoDAL getPhotoDAL = new GetPhotoDAL();
+
+        public DataSet getPhoto(string clientID)
+        {
+            return getPhotoDAL.getPhoto(clientID);
+        }
+
+    }
+}

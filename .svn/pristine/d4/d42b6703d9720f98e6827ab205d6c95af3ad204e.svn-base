@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/admin_photo.css" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <script src="scripts/admin_photo.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+</head>
+<body>
+    <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="no-display" id="btn_homepage" onclick="clickhref('admin_user.html')">用户管理</button>
+        <button class="no-display" id="btn_scan" onclick="clickhref('admin_comment.html')">消息管理</button>
+        <button class="display" id="btn_more"onclick="clickhref('admin_photo.html')">图片管理</button>
+        <button class="no-display" id="btn_logout"onclick="clickhref('admin.html')">退出</button>
+        <img  id="top" src="img/top.png"/>
+    </div>
+    <div id="PhotoContainer">
+
+    </div>
+</body>
+</html>

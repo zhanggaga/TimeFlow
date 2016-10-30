@@ -1,0 +1,12 @@
+﻿function shou()
+{
+    $("#comments").attr("class", "com-no-display");
+    $("#la").attr("class", "display");
+}
+function la() {
+    $("#comments").attr("class", "com-display");
+    $("#la").attr("class", "com-no-display");
+}
+function clickhref(path) {
+    window.location.href = path;
+}

@@ -1,0 +1,134 @@
+body {
+	background-image: url(../img/index_bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#container {
+	width: 582px;
+	/*background-color: white;*/
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 294px;
+}
+
+#container button {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #444444;
+	background-color: white;
+	width: 194px;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	border: 0;
+}
+#container button.display {
+	background-color: white;
+	color: #444444;
+}
+#container button.no-display {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+#container button:hover {
+	color: #8db800;
+}
+#register {
+	
+}
+#container #formContainer {
+	background-color: white;
+	/*padding: 10px;*/
+	padding-top: 30px;
+	padding-left: 25px;
+	/*width: 310px;*/
+}
+#container #formContainer img {
+	float: right;
+}
+#container #formContainer #other {
+	float: right;
+	margin-right: 30px;
+	margin-left: 25px;
+	width: 161px;
+}
+#container #formContainer #other img {
+	margin-bottom: 10px;
+}
+#container #putinArea input {
+	height: 35px;
+	width: 300px;
+	/*margin-bottom: 20px;*/
+	border: solid #d7d7d7 1px;
+}
+#container #putinArea input#testcode {
+	width: 200px;
+}
+#container #putinArea #testcodeArea {
+	width: 300px;
+}
+#container #putinArea #testcodeArea img {
+	height: 30px;
+	padding-top: 5px;
+	width: 60px;
+	padding-right: 25px;
+}
+#container #formContainer #submit_register, #container #formContainer #submit_login {
+	background-color: #8db800;
+	color: white;
+	width: 300px;
+	height: 35px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	letter-spacing: 10px;
+	margin-top: 20px;
+	border: 0;
+	margin-bottom: 40px;
+	line-height: 10px;
+}
+#formContainer .n-default .msg-wrap {
+	background-color: #FF9900;
+	font-family: "arial, helvetica, sans-serif";
+	font-family: "微软雅黑";
+	font-size: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-bottom: 6px;
+	padding-top: 6px;
+	color: #FFFFFF;
+	border-radius: 4px;
+	/*letter-spacing: 3px;*/
+	background-color: rgba(255,153,0,0.8);
+}
+#formContainer #putinArea input.n-invalid {
+	/*background: #FDE2E9;*/
+	/*background-color: rgba(255,153,0,0.4);*/
+	/*border-color: rgba(230,0,0,0.8);*/
+	 transition:border linear .2s,box-shadow linear .5s;
+	 -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+	 -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+	 outline:none;
+	 border-color:rgba(230,100,110,.75);
+	 /*rgba(240,150,10,.75)*/
+	 box-shadow:0 0 8px rgba(230,100,100,.5);
+	 -moz-box-shadow:0 0 8px rgba(230,100,100,.5);
+	 -webkit-box-shadow:0 0 8px rgba(230,100,100,3);
+}
+#formContainer .n-default .n-ok {
+	background-color: rgba(0,0,0,0);
+}
+#formContainer .n-invalid + .msg-box .msg-wrap .n-icon {
+	display: none;
+}
+#formContainer #login #putinArea #testcodeArea .msg-box  {
+	left: 75px;
+	top: 4px;
+}
+#container button, #formContainer #login #putinArea #testcodeArea img {
+	cursor: pointer;
+}

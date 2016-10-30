@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <title></title>
+    <style type="text/css">
+     #content2 {
+      margin-left:40%;
+      margin-top:20%;
+        }
+     input {
+      width:300px;
+      height:30px;
+        }
+     button {
+    background-color: #8db800;
+	color: white;
+	width: 100px;
+	height: 35px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	letter-spacing: 10px;
+	margin-top: 20px;
+	border: 0;
+	margin-left: 100px;
+	line-height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content2"  >
+        <form action="reset.aspx" method="post" name="reset2" id="form2">
+        <input type="password" name="newpwd" placeholder="请输入新密码" /><br />
+        <input type="password"  name="confirm" placeholder="确认新密码" /><br />
+        <button id="3" type="submit">提交</button>
+        </form>
+    </div>
+</body>
+    <script>
+    	$.ajaxSetup({   
+            async : false  
+        }); 
+        $("#3").click(function () {
+            $.post("reset.aspx",
+                $("#form2").serialize(),//表单数据序列化
+                function (data) {
+                    if (data == "success") {
+                        alert("密码修改成功")
+                    } else {
+                        alert("密码修改失败");
+                    }
+                }
+            );
+        });
+        var now_url = window.location.href;
+        var srcs = new Array();
+        srcs = now_url.split("?userMail=",2);
+        var myMail = srcs[1];
+        var end_url="reset.aspx";
+        $.post(end_url,
+        {
+        	userMail : myMail
+        }, function() {
+        	
+        });
+    </script>
+</html>

@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DAL;
+using Model;
+using BLL;
+using System.Data;
+
+public partial class JQ : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //注册
+        RegisterBLL registerbll = new RegisterBLL();
+        Client myUser = new Client();
+
+        myUser.Mail = Request.Form["username"].ToString();
+        string strPsw = Request.Form["password"].ToString();
+
+        string newPsw = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(strPsw, "MD5");
+        myUser.Password = newPsw;
+
+        int add = registerbll.addMail(myUser);
+        if (add == 1)
+        {
+            //if (!Page.ClientScript.IsStartupScriptRegistered("string2"))
+            //{
+            //    Page.ClientScript.RegisterStartupScript(this.GetType(), "string2", @"<script>alert('注册成功!');</script>");
+            //}
+
+            Response.Write("注册成功！");
+        }
+        else
+        {
+            if (add == 2)
+            {
+                //if (!Page.ClientScript.IsStartupScriptRegistered("string2"))
+                //{
+                //    Page.ClientScript.RegisterStartupScript(this.GetType(), "string2", @"<script>alert('该用户名已被占用!');</script>");
+                //}
+
+                Response.Write("该用户名已被占用!");
+            }
+            else
+            {
+                //if (!Page.ClientScript.IsStartupScriptRegistered("string2"))
+                //{
+                //    Page.ClientScript.RegisterStartupScript(this.GetType(), "string2", @"<script>alert('注册失败!');</script>");
+                //}
+
+                Response.Write("注册失败!");
+            }
+        }
+
+
+
+        ////登录
+        //LoginBLL loginrbll = new LoginBLL();
+
+        //Client myUser = new Client();
+
+        //myUser.Mail = Request.Form["username"].ToString();
+        //string strPsw = Request.Form["password"].ToString();
+
+        //string newPsw = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(strPsw, "MD5");
+        //myUser.Password = newPsw;
+
+        //DataSet ds = loginrbll.getUserMail(myUser);
+
+        //if (ds.Tables[0].Rows.Count > 0)
+        //{
+        //    //Session["UMail"] = Request.Form["username"].ToString();
+
+        //    //Session["UID"] = ds.Tables[0].Rows[0]["password"].ToString();
+
+        //    Response.Write('1');
+        //}
+        //else
+        //{
+        //    Response.Write('0');
+        //}
+
+
+
+    }
+}

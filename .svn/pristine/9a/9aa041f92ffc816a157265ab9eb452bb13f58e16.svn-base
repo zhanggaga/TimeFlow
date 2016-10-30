@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Model;
+
+namespace DAL
+{
+    public class AddPhotoDAL
+    {
+        //数据库链接字符串
+        private string conn_string = System.Configuration.ConfigurationSettings.AppSettings["strConn"];
+
+        //上传照片
+        public int addPhoto(Photo photo)
+        {
+            string comTxt_photo = string.Format("INSERT INTO [TimeFlow].[dbo].[Photo]([Time],[Pic],[CommentsNum],[LikeNum],[AlbumID],[ClientID],[IfPublic]) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", photo.Time, photo.Pic, photo.CommentsNum, photo.LikeNum, photo.AlbumID, photo.ClientID, photo.IfPublic);
+            int i = SqlHelper.ExecuteNonQuery(conn_string, System.Data.CommandType.Text, comTxt_photo, null);
+            if (i == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+    }
+}

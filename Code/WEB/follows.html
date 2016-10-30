@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Styles/follows.css" />
+	<link rel="bookmark"  type="image/x-icon"  href="TimeFlow.ico"/>
+    
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <script src="scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>    
+    <script src="scripts/ifLogin.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/getClient.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/follows.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/search_keyWord.js" type="text/javascript" charset="utf-8"></script>
+    
+    <title></title>
+</head>
+<body>
+     <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="no-display" id="btn_homepage" onclick="clickhref('HomePage.html')">首页</button>
+        <button class="no-display" id="btn_scan" onclick="clickhref('scan.html')">浏览</button>
+        <button class="no-display" id="btn_more"onclick="clickhref('userInfo.html')">个人信息</button>
+        <input type="text"  id="search"  placeholder="搜索标签、用户" />
+        <button  id="user"  onclick="clickhref('photos.html')"></button>
+    </div>
+    <div id="container">
+        <div id="userArea">
+
+            <!--<img id="myPhoto" src="img/bc3.png" alt="MyPhoto" />-->
+            <div id="userintro">
+                <span>昵称完全不知道叫什么~</span>
+                <br />
+                <span>简介：这个家伙很懒，什么都没留下。</span>
+            </div> 
+            <div id="userInfor">
+                
+                <div id="photo" onclick="clickhref('photos.html')">
+                    <span>33</span><br />
+                    <span>照片</span>
+                </div>
+                <div id="follower" onclick="clickhref('fans.html')">
+                    <span>56</span><br />
+                    <span>粉丝</span>
+                </div>
+                <div id="followee" onclick="clickhref('follows.html')">
+                    <span>56</span><br />
+                    <span>关注</span>
+                </div>
+                 <div id="album" onclick="clickhref('hdp.html')">
+                    <span>3</span><br />
+                    <span>时间轴</span>
+                </div>
+            </div>
+
+        </div>
+            <div id="followerList">
+                <div id="followerCount">
+                    <p><span>关 注</span>&nbsp;<span id="follow_num_total">56</span></p>
+                </div>
+                <div id="detail">
+                </div>
+            </div>
+    </div>
+    <div id="more">
+        <button onclick="getphotos()" id="more_logo"></button> 
+    </div>
+</body>
+</html>

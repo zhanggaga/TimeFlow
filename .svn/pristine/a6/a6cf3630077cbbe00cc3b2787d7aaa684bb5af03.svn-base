@@ -1,0 +1,196 @@
+﻿body{
+    background-color:rgb(237,237,239);
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-family:"微软雅黑";
+}
+#all {
+    width:700px;
+    margin:0 auto;
+    margin-top:60px;
+    background-color:white;
+    box-shadow: 2px 2px 2px 2px #aaa;
+}
+.com-no-display {
+    display: none;
+}
+.com-display {
+    display: block;
+}
+button {
+    cursor:pointer;
+}
+#navigation {
+    background-color: rgb(36,41,44);
+    height:80px;
+}
+#navigation #logo {
+    margin-left:120px;
+    margin-top:4px;
+}
+#navigation button {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	background-color: rgb(36,41,44);
+    position: relative;
+    bottom: 20px;
+	margin-left: 55px;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	border: 0;
+}
+#navigation button.display {
+	color: white;
+}
+#navigation button.no-display {
+	color: gray;
+}
+#navigation button:hover {
+	color: white;
+}
+#navigation input {
+    border-style: none;
+    width: 220px;
+    height: 27px;
+    background-color:black;
+    border-radius: 30px;
+    margin-left: 150px;
+    position: relative;
+    bottom: 22px;
+    padding-left:35px;
+    background-image:url(../img/fangda.png);
+    background-position-x:10px;
+    background-position-y:8px;
+    background-repeat:no-repeat;
+    color:white;
+}
+
+#navigation #user {
+    background-image: url(../img/user.png); 
+    width: 28px;
+    height: 30px;
+    margin-left: 130px;
+    position: relative;
+    bottom: 25px;
+}
+   #navigation #top {
+    width: 17px;
+    height:9px;
+    position: relative;
+    right: 630px;
+    background-color:rgb(36,41,44);
+    }
+    #add #add_btn {
+    margin-left: 42%;
+    margin-top: 25px;
+    width: 85px;
+    height: 85px;
+    overflow:hidden;
+	background-image: url(../img/add.png); 
+    background-color:white;
+    border:none;
+    }
+    #add .tx {
+        font-size:18px;
+        border:none;
+        background-color:white;
+       font-family:"微软雅黑";
+       margin-left: 295px;
+       margin-top: 10px;
+    }
+#content {
+        background-color:white;
+        margin-top:20px;
+}
+#form1 {
+    padding-left:180px;
+}
+    #content input[type=text] {
+    width: 300px;
+	height: 35px;
+    }
+     /*#label {
+        font-size:15px;
+        color:rgb(65,188,234);
+        margin-left:10px;
+}*/
+
+  
+    /*#content .sex {
+        margin-left:55px;
+        margin-right:20px;
+        margin-top:8px; 
+       
+    }*/
+
+    #content #sex {
+    width: 302px;
+	height: 39px;
+    border:1px solid rgb(169,169,169);
+    margin-left:40px;
+    margin-top: -15px;
+    }
+#sex span {
+    font-family:"宋体";
+    font-size:9px;
+    color:rgb(169,169,169);
+     margin-left:2px;
+     position:relative;
+     top:-3px;
+}
+/*#sex .sex {
+    cursor:pointer;
+    position:relative;
+    bottom:-4px;
+}*/
+#checkbox1, #checkbox2 {
+  margin-left: 70px;
+margin-top: 15px;
+}
+#place {
+    width: 302px;
+	height: 39px;
+    border:1px solid rgb(198,198,198);
+    margin-top: -15px;
+     margin-left:40px;
+}
+#ok {
+    margin-left:90px;
+     width: 150px;
+	height: 35px;
+    font-family:"微软雅黑";
+    font-size:18px;
+    background-color: #8db800;
+	color: white;
+}
+ #id_countrySelect
+    {
+               width                    : 70px;
+               height                   : 39px;
+               vertical-align           : middle;
+               border                   : 1px solid rgb(198,198,198);
+               cursor                   : pointer;
+               color:gray;
+     }
+ #id_provSelect,#id_citySelect
+    {
+               width                    : 111px;
+               height                   : 39px;
+               vertical-align           : middle;
+               border                   : 1px solid rgb(198,198,198);
+               cursor                   : pointer;
+               color:gray;
+     }
+#title_sex {
+    position:relative;
+    bottom:-15px;
+}
+#title_place {
+    position:relative;
+    bottom:-15px;
+}
+#title_hobbit {
+    position:relative;
+    bottom:-15px;
+}

@@ -1,0 +1,102 @@
+#cluster .eg-container {
+  padding-top: 15px;
+  /*padding-bottom: 15px;*/
+  padding-left: 60px;
+  margin-bottom: -10px;
+}
+
+#cluster .eg-main {
+  max-height: 480px;
+  margin-bottom: 30px;
+}
+
+#cluster .eg-wrapper {
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: inset 0 0 3px #f7f7f7;
+  height: 480px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url("../source/bg.png");
+}
+
+#cluster .eg-wrapper img {
+  width: 100%;
+}
+
+#cluster .eg-preview {
+  margin-bottom: 15px;
+}
+
+#cluster .preview {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+#cluster .preview-lg {
+  width: 290px;
+  height: 160px;
+}
+
+#cluster .preview-md {
+  width: 160px;
+  height: 120px!important;
+}
+
+#cluster .preview-sm {
+  width: 72.5px;
+  height: 45px;
+}
+
+#cluster .preview-xs {
+  width: 36.25px;
+  height: 22.5px;
+}
+
+#cluster .eg-data {
+  padding-right: 15px;
+}
+
+#cluster .eg-data .input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#cluster .eg-data .input-group-addon {
+  min-width: 65px;
+}
+
+#cluster .eg-button > .btn {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+#cluster .eg-input .input-group {
+  margin-bottom: 15px;
+}
+
+#cluster .eg-output .btn {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+#cluster .eg-output img {
+  max-height: 214px;
+}
+.eg-output {
+	float: right;
+	position: relative;
+	top: -200px;
+}
+#cluster .clearfix {
+	padding-left: 60px;
+}
+#cluster .clearfix textarea {
+	display: none;
+}
+#cluster span.span-radio {
+	color: #f0f0f4;
+}

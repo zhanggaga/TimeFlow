@@ -1,0 +1,126 @@
+﻿body{
+    background-color:rgb(237,237,239);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.com-no-display {
+    display: none;
+}
+.com-display {
+    display: block;
+}
+button {
+    cursor:pointer;
+}
+#navigation {
+    background-color: rgb(36,41,44);
+    height:80px;
+}
+#navigation #logo {
+    margin-left:120px;
+    margin-top:4px;
+}
+#navigation button {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	background-color: rgb(36,41,44);
+    position: relative;
+    bottom: 20px;
+	margin-left: 150px;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	border: 0;
+}
+#navigation button.display {
+	color: white;
+}
+#navigation button.no-display {
+	color: gray;
+}
+#navigation button:hover {
+	color: white;
+}
+
+    #navigation #top {
+    width: 17px;
+    height:9px;
+   position: relative;
+    right: 269px;
+    background-color:rgb(36,41,44);
+    }
+#PhotoContainer {
+      width: 800px;
+      margin-top:40px;
+}
+    .photoContainer {
+	width: 260px;
+	height: 260px;
+	display: inline-block;
+	margin-right: 6px;
+	margin-bottom: 6px;
+} 
+.photoContainer article, .photoContainer article .post-format-content,
+.photoContainer article .post-format-content .post-thumbnail {
+	height: 100%;
+	width: 100%;
+} 
+.photoRow {
+	margin-left: 276px;
+	width: 800px;
+}
+article {
+    float: left;
+    position: relative;
+    margin-right:6px;
+    margin-bottom:6px;
+}
+    
+#content article:nth-child(4n+4) {  
+    margin-right: 0;  
+}  
+.post-format-content {  
+    position: relative;  
+    background: #111;  
+}  
+.post-thumbnail {  
+    max-width: 100%;  
+    height: auto;  
+    overflow: hidden;  
+}  
+.content-wrap {  
+    padding: 0;  
+    position: absolute;  
+    text-align: center;  
+    width: 100%;  
+    top: 0;  
+    bottom: 0;  
+    display: table-cell;  
+    vertical-align: middle;  
+    overflow: hidden;  
+}  
+
+
+.featured-image {  
+    display: table-cell;  
+    position: relative;  
+    transition: opacity .25s ease-in-out, background .25s ease-in-out;  
+    -moz-transition: opacity .25s ease-in-out, background .25s ease-in-out;  
+    -webkit-transition: opacity .25s ease-in-out, background .25s ease-in-out;  
+    vertical-align: middle;  
+    z-index: 1;  
+    color: #fff;  
+    text-decoration: none;  
+    opacity: 0;  
+    width:260px;
+    height:260px; 
+}  
+.featured-image:hover {  
+    opacity: 0.9;  
+    color: #fff;  
+    background: rgba(0,0,0,0.8);  
+    cursor:pointer;
+}  
+.post-thumbnail img {  
+    display: block;  
+} 

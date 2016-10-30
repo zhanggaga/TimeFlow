@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DAL;
+using Model;
+using BLL;
+using System.Data;
+
+public partial class active : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        RegisterBLL registerbll = new RegisterBLL();
+        Client myUser = new Client();
+
+
+        //取出参数id 
+        string mail = Request.QueryString["mail"].ToString();
+        string activeCode = Request.QueryString["activecode"].ToString();
+
+        DataSet ds = registerbll.getUserID(myUser);
+
+        if (ds.Tables[0].Rows[0]["Mail"].ToString() == mail && (ds.Tables[0].Rows[0]["Phone"].ToString() == activeCode))
+        {
+            Response.Write("激活成功!");
+        }
+        else
+        {
+            Response.Write("用户已存在，但是激活码错误！");
+        }
+    }
+}

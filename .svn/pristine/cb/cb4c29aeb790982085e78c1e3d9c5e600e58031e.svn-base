@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DAL;
+using Model;
+
+namespace BLL
+{
+    public class AddPhotoBLL
+    {
+        AddPhotoDAL addPhotoDAL = new AddPhotoDAL();
+
+        /// <summary>
+        /// 上传照片
+        /// </summary>
+        /// <param name="photo"></param>
+        /// <returns></returns>
+        public int addPhoto(Photo photo)
+        {
+            return addPhotoDAL.addPhoto(photo);
+            
+        }
+
+
+    }
+}

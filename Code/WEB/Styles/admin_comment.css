@@ -1,0 +1,71 @@
+﻿body{
+    background-color:rgb(237,237,239);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.com-no-display {
+    display: none;
+}
+.com-display {
+    display: block;
+}
+button {
+    cursor:pointer;
+}
+#navigation {
+    background-color: rgb(36,41,44);
+    height:80px;
+}
+#navigation #logo {
+    margin-left:120px;
+    margin-top:4px;
+}
+#navigation button {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	background-color: rgb(36,41,44);
+    position: relative;
+    bottom: 20px;
+	margin-left: 150px;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	border: 0;
+}
+#navigation button.display {
+	color: white;
+}
+#navigation button.no-display {
+	color: gray;
+}
+#navigation button:hover {
+	color: white;
+}
+
+    #navigation #top {
+    width: 17px;
+    height:9px;
+   position: relative;
+    right: 513px;
+    background-color:rgb(36,41,44);
+    }
+    #content {
+    width:1300px;
+    background-color:white;
+    margin:0 auto;
+    margin-top:40px;
+    border:1px solid rgb(198,198,198);
+}
+table {
+    font-family: "微软雅黑";
+	font-size: 18px;
+}
+td {
+    border-bottom:1px solid rgb(198,198,198);
+}
+
+.col1{width:150px;}
+.col2{width:200px;}
+.col3{width:670px;}
+.col4{width:220px;}
+.col5{width:150px;}

@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+using System.Web;
+using System.Configuration;
+using Model;
+using System.Data;
+
+namespace DAL
+{
+    public class LoginDAL
+    {
+        //数据库链接字符串
+        private string ConnString = System.Configuration.ConfigurationSettings.AppSettings["strConn"];
+
+        //用户登录
+
+        public int userLoginMail(Client user)
+        {
+
+            string comTxt_mail = string.Format("select * from Client where Mail='{0}' and Password='{1}'", user.Mail, user.Password);
+            SqlDataReader list_mail = SqlHelper.ExecuteReader(ConnString, System.Data.CommandType.Text, comTxt_mail, null);
+
+
+            if (list_mail.HasRows == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+        public int userLoginPhone(Client user)
+        {
+
+            string comTxt_phone = string.Format("select * from Client where  Phone='{0}' and Password='{1}'", user.Phone, user.Password);
+            SqlDataReader list_phone = SqlHelper.ExecuteReader(ConnString, System.Data.CommandType.Text, comTxt_phone, null);
+
+            if (list_phone.HasRows == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+        //用户登录
+        public DataSet getUserMail(Client user)
+        {
+            DataSet ds_mail = new DataSet();
+
+            string comTxt_mail = string.Format("select * from Client where Mail='{0}' and Password='{1}'",user.Mail, user.Password);
+
+            SqlHelper.FillDataSet(ConnString, System.Data.CommandType.Text, comTxt_mail, ds_mail, null);
+
+            return ds_mail;
+        }
+
+        public DataSet getUserPhone(Client user)
+        {
+            DataSet ds_phone = new DataSet();
+
+            string comTxt_phone = string.Format("select * from Client where  Phone='{0}' and Password='{1}'",user.Phone, user.Password);
+
+            SqlHelper.FillDataSet(ConnString, System.Data.CommandType.Text, comTxt_phone, ds_phone, null);
+
+            return ds_phone;
+        }
+
+
+
+
+      
+    }
+}

@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DAL;
+using Model;
+using BLL;
+
+
+
+
+public partial class AddPhoto : System.Web.UI.Page
+{
+
+         public int PhotosCount = 0;//照片数量计数
+
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        AddPhotoBLL addphotobll = new AddPhotoBLL();
+        Photo myPhoto = new Photo();
+
+
+      
+          myPhoto.ClientID = int.Parse(Session["UID"].ToString());
+    //    myPhoto.Time =
+    //    string img_url=imgPath()
+    //    myPhoto.Pic = img_url;
+    //    myPhoto.AlbumID=int.parse();
+    //    myPhoto.IfPublic=
+
+          int add = addphotobll.addPhoto(myPhoto);
+        if(add==1)
+        {
+            Response.Write("上传照片成功");
+        }
+        else
+        {
+            Response.Write("上传照片失败");
+        }
+
+    }
+
+
+    //private string imgPath(string Modl)
+    //{
+    //    HttpPostedFile file = FileUpload1.PostedFile;//客户端文件路径
+    //    string fileName, fileExtension;
+    //    fileName = System.IO.Path.GetFileName(file.FileName);
+    //    if (fileName != string.Empty)
+    //    {
+    //        fileExtension = System.IO.Path.GetExtension(fileName);
+    //        if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif" || fileExtension.ToLower() == ".jpeg")
+    //        {
+    //            if (!Directory.Exists("IMG/"))
+    //                Directory.CreateDirectory("IMG/");
+    //            Directory.CreateDirectory(System.Web.HttpContext.Current.Request.MapPath("IMG/"));
+    //            fileName = ReLogoName(fileExtension, Modl);
+    //            file.SaveAs(System.Web.HttpContext.Current.Request.MapPath("IMG/") + fileName);
+    //            return "IMG/" + fileName;
+    //        }
+    //    }
+
+    //    return "";
+    //}
+
+    //private string ReLogoName(string fileExtension, string Modl)
+    //{
+    //    string newFileName = "";
+    //    newFileName = Modl + DateTime.Now.ToString("yyyyMMddhhmmss") + fileExtension;
+    //    return newFileName;
+    //}
+
+
+
+    /// <summary>
+    /// 在图片上增加文字水印
+    /// </summary>
+    /// <param name="Path">原服务器图片路径</param>
+    /// <param name="Path_sy">生成的带文字水印的图片路径</param>
+    public static void AddShuiYinWord(string Path, string Path_sy)
+    {
+        string addText = "TimeFlow";
+        System.Drawing.Image image = System.Drawing.Image.FromFile(Path);
+        System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(image);
+        g.DrawImage(image, 0, 0, image.Width, image.Height);
+        System.Drawing.Font f = new System.Drawing.Font("Verdana", 16);
+        System.Drawing.Brush b = new System.Drawing.SolidBrush(System.Drawing.Color.Blue);
+
+        g.DrawString(addText, f, b, 15, 15);
+        g.Dispose();
+
+        image.Save(Path_sy);
+        image.Dispose();
+    }
+
+
+
+}

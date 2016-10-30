@@ -1,0 +1,21 @@
+.tag-editor {
+	width: 400px!important;
+height: 34px;
+	font-size: 14px!important;
+    border: 1px solid #337ab7; 
+    cursor: text;
+    background: none;
+    position: relative;
+left: 750px;
+bottom: 33px;
+
+}
+.tag-editor .tag-editor-tag{
+	color: white!important;
+    background-color:#337ab7;
+}
+.tag-editor .tag-editor-delete { 
+    background: #337ab7; 
+    cursor: pointer; 
+    padding-right: 5px; 
+    border-radius: 0 2px 2px 0; }

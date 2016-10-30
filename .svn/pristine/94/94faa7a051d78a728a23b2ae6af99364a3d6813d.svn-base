@@ -1,0 +1,3 @@
+body .test_layer_skin {
+	background-color: #FFFCEF;
+}

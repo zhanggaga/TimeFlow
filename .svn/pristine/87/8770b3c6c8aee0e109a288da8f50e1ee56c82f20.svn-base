@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/HomePage.css" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <script src="scripts/HomePage.js" type="text/javascript" charset="utf-8"></script>
+    <title>时光流影</title>
+ 
+</head>
+<body>
+    <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="display" id="btn_homepage" onclick="clickhref(HomePage.html)">首页</button>
+        <button class="no-display" id="btn_scan">浏览</button>
+        <button class="no-display" id="btn_more">更多</button>
+        <input type="text"  id="search"  placeholder="搜索标签、用户" />
+        <button  id="user"></button>
+    </div>
+    <div id="addphoto">
+        <button  id="add"></button>
+    </div>
+    <div id="content">
+        <div id="num1">
+            <button  id="user1"></button>
+            <span class="nikename">摄影地理达人</span> <br />
+            <img id="photo1" src="img/1.png"/><br />
+            <img class="label" src="img/label.png"/>
+            <span class="label">摄影地理达人&nbsp &nbsp &nbsp摄影</span> 
+             <button  class="comment"></button>
+             <button  class="share"></button>
+             <button  class="like"></button><br/>
+            <button id="la" class="com-no-display" onclick="la()"></button>
+            <!-- <button  id="la"></button>-->
+        </div>
+        <div id="comments" class="com-display" >
+            <input type="text"  id="com"   />
+            <button id="publish">发布</button><br /><br />
+            <div id="c1">
+                   <button class="luser"></button> &nbsp 
+                   <span class="lnn">jianxin  </span>
+                   <span class="com">照片真不错</span><br />
+                   <span class="time">08:30</span>
+                   <button id="reply">回复</button>
+            </div>
+            
+             
+               <div id="c2">
+                   <button class="luser"></button> &nbsp 
+                   <span class="lnn">haoma</span>
+                   <span class="com">我喜欢你的照片</span><br />
+                   <span class="time">11:45</span>
+                   <button id="reply">回复</button>
+            </div>
+   
+          
+                <div id="c3" >
+                   <button class="luser"></button> &nbsp 
+                   <span class="lnn">langke  </span>
+                   <span class="com">具体情况问问小助手吧~</span><br />
+                    <span class="time">15:09</span>
+                   <button id="reply">回复</button>
+            </div>
+            
+               <button id="allcom">全部二十条评论</button>
+            <br />
+               <button id="shou" onclick="shou()"></button>
+          
+               
+         </div>
+        <br /><br />
+        <div id="num2">
+            <button  id="user2"></button>
+            <span class="nikename">图片达人</span><br />
+            <img id="photo2" src="img/2.png"/><br /><br />
+            <img class="Iabel" src="img/label.png"/>
+            <span class="label">图片&nbsp &nbsp &nbsp摄影&nbsp &nbsp &nbsp儿童</span> 
+             <button  class="comment"></button>
+             <button  class="share"></button>
+             <button  class="like"></button>
+            <!-- <button  id="la"></button>-->
+        </div>
+        <br /><br />
+           
+    </div>
+</body>
+</html>

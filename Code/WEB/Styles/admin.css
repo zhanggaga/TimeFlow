@@ -1,0 +1,51 @@
+﻿body {
+	background-image: url(../img/admin_bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+button {
+	cursor:pointer;
+}
+#logo {
+    width: 320px;
+    height:107px;
+    margin-left:40%;
+    margin-top:50px;
+}
+#content {
+    width: 400px;
+	position: relative;
+	top: 240px;
+    padding: 0;
+    border: 0;
+    margin-left:auto;
+    margin-right:auto;
+}
+#aid,#apwd{
+    width: 400px;
+    height:45px;
+    margin-top:40px;
+    background-color:transparent;
+    background-image:url(../img/luser.png);
+    background-position-x:370px;
+    background-position-y:16px;
+    background-repeat:no-repeat;
+    color: white;
+}
+#apwd {
+    background-image: url(../img/pass-lock.png);
+}
+#login {
+    width: 127px;
+    height: 45px;
+    margin-left: 275px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    color: white;
+    
+    font-size: 20px;
+}

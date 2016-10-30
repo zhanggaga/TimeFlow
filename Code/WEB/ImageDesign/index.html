@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时光流影 -- Time Flow</title>
+  <link media="all" rel="stylesheet" href="style/main.css" type="text/css" />
+  <link media="all" rel="stylesheet" href="style/bar.style.css" type="text/css" />
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../scripts/layer/skin/layer.css" />
+  <link href="css/docs.css" rel="stylesheet">
+  <link  href="cropper.css" rel="stylesheet">
+  <link rel="stylesheet" href="../Styles/jquery.tag-editor.css" />
+  <link href="../Styles/myTagEditor.css" rel="stylesheet" />
+  
+   <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="../scripts/jquery.tag-editor.min.js"></script>
+	
+  <script type="text/javascript" src="js/combined/alloyimage.js"></script>
+  <script type="text/javascript" src="js/main2.js"></script>
+  <script type="text/javascript" src="js/addMark.js"></script>
+
+</head>
+<body>
+<script src="watermark.js" type="text/javascript" charset="utf-8"></script>
+<div id="alloy">
+	<div class="header">照片处理</div>
+	<div class="wrapper">
+  		<div class="left">
+    		<h3>效果</h3>
+    		<ul id="effects" class="effects">
+      			<li class="e_item">
+        			<div class="imgWrapper">
+        			</div>
+      			</li>
+    		</ul>
+  		</div>
+	  	<div class="right">
+		    <div id="picWrapper" class="picWrapper">
+		        <img src="" class="pic" id="pic" alt="" draggable="false"/>
+		        <div id="infoMsg">
+		          	处理中
+		        </div>
+		    </div>  
+	  	</div>	
+	</div>
+	<div class="command">
+		<ul class="demoImg" id="test">
+		    <li>水印 <br />WaterMark</li>
+            <li class="w_item"><img src="watermark/timeflow.png" alt="timeflow" style="height:80px; width:auto;" /></li>
+		    <li class="w_item"><img src="watermark/message_active_03.png" alt="message" /></li>
+		    <li class="w_item"><img src="watermark/logo.png" alt="logo"/></li>
+		    <li class="w_item"><img src="watermark/universary.png" alt="universary"/></li>
+		    <li class="w_item"><img src="watermark/promise.png" alt="promise"/></li>
+		    <li class="w_item"><img src="watermark/quality.png" alt="quality" style="background-color:rgba(255,255,255,0.8)" /></li>
+		    <li class="w_item"><img src="watermark/new.png" alt="new" style="background-color:rgba(255,255,255,0.8)" /></li>
+		    <li class="w_item"><img src="watermark/PASS.png" alt="pass" style="margin-top:20px" /></li>
+		</ul>
+  		<ul class="command_items">
+		    <li>
+		        <a class="button" href="#" class="mask" id="open_btn">打开图片</a>
+		    </li>
+            <li>
+                <a class="button" href="#" class="mask" id="confirm">确定</a>
+            </li>		    	
+		    <input style="display: none;" type="text" id="myMage" value="" name="myPhoto"/>
+
+		</ul>
+		<input type="file" name="open" id="open" class="open" accept="image/*"/>
+</div>
+
+</div>
+<div id="cluster">
+  <div class="container-fluid eg-container" id="basic-example">
+    <div class="row eg-main">
+      <div class="col-xs-12 col-sm-9">
+        <div class="eg-wrapper">
+          <img class="cropper" src="img/picture-1.jpg" alt="Picture">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="eg-preview clearfix">
+         <!--  <div class="preview preview-lg"></div> -->
+          <div class="preview preview-md"></div>
+<!--           <div class="preview preview-sm"></div>
+          <div class="preview preview-xs"></div> -->
+        </div>
+<!--         <div class="eg-data">
+          <div class="input-group">
+            <span class="input-group-addon">X</span>
+            <input class="form-control" id="dataX" type="text" placeholder="x">
+            <span class="input-group-addon">px</span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Y</span>
+            <input class="form-control" id="dataY" type="text" placeholder="y">
+            <span class="input-group-addon">px</span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Width</span>
+            <input class="form-control" id="dataWidth" type="text" placeholder="width">
+            <span class="input-group-addon">px</span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Height</span>
+            <input class="form-control" id="dataHeight" type="text" placeholder="height">
+            <span class="input-group-addon">px</span>
+          </div> -->
+          <!-- <div class="input-group">
+            <span class="input-group-addon">Rotate</span>
+            <input class="form-control" id="dataRotate" type="text" placeholder="rotate">
+            <span class="input-group-addon">deg</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="clearfix">
+      <div class="eg-button">
+        <!--<button class="btn btn-primary" id="Goback" type="button">返回上一步</button>-->
+       <!--  <button class="btn btn-warning" id="reset" type="button">Reset</button> -->
+        <button class="btn  btn-warning" id="reset2" type="button">重置</button>
+        <button class="btn btn-primary" id="clear" type="button">清除选框</button>
+        <!-- <button class="btn btn-danger" id="destroy" type="button">Destroy</button> -->
+<!--         <button class="btn btn-success" id="enable" type="button">Enable</button>
+        <button class="btn btn-warning" id="disable" type="button">Disable</button>
+        <button class="btn btn-info" id="zoomIn" type="button">Zoom In</button>
+        <button class="btn btn-info" id="zoomOut" type="button">Zoom Out</button> -->
+        <button class="btn btn-info" id="rotateLeft" type="button">左旋转</button>
+        <button class="btn btn-info" id="rotateRight" type="button">右旋转</button>       
+	    <button class="btn btn-primary" id="getDataURL" type="button">裁剪</button>
+        <!--<button class="btn btn-primary" id="getDataURL3" type="button">Get Data URL (100*100)</button>-->
+	    
+	    <input class="input-radio" type="radio" name="ifPublic" value="Y"  checked="checked"/> <span class="span-radio">公开</span>
+	    <input class="input-radio" type="radio" name="ifPublic" value="N" /> <span class="span-radio">私密</span>
+		<textarea  id="label"name="label" style="display: none;">风景,人物,动物</textarea>
+        <!-- <button class="btn btn-primary" id="setData" type="button">Set Data</button> -->
+      </div>
+      <div class="row eg-input">
+        <!-- <div class="col-md-6"> -->
+<!--           <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-info" id="getData" type="button">Get Data</button>
+            </span>
+            <input class="form-control" id="showData" type="text">
+            <span class="input-group-btn">
+              <button class="btn btn-info" id="getData2" type="button">Get Data (Rounded)</button>
+            </span>
+          </div> -->
+<!--           <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-info" id="getImageData" type="button">Get Image Data</button>
+            </span>
+            <input class="form-control" id="showImageData" type="text">
+          </div> -->
+        <!-- </div> -->
+        <div class="col-md-3">
+          <div class="input-group">
+
+            <!--<input class="form-control" id="replaceWith" type="text" value="img/picture-2.jpg">-->
+            <span class="input-group-btn">
+            <button class="btn btn-primary" id="setAspectRatio_1_1" type="button">1:1</button>
+            </span>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" id="setAspectRatio_3_4" type="button">3:4</button>
+            </span>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" id="setAspectRatio_4_3" type="button">4:3</button>
+            </span>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" id="setAspectRatio_9_16" type="button">9:16</button>
+            </span>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" id="setAspectRatio_16_9" type="button">16:9</button>
+            </span>          
+            <!--<input class="form-control" id="aspectRatio" type="text" value="auto">-->
+          </div>
+          <!--<div class="input-group">
+            <span class="input-group-btn">
+				<button class="btn btn-primary" id="getDataURL" type="button">裁剪</button>
+			</span>
+          </div>-->
+        </div>
+        <div class="col-md-3">
+<!--           <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" id="zoom" type="button">Zoom</button>
+            </span>
+            <input class="form-control" id="zoomWith" type="number" value="0.5">
+          </div> -->
+          <!--<div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" id="rotate" type="button">Rotate</button>
+            </span>
+            <input class="form-control" id="rotateWith" type="number" value="45">
+          </div>-->
+        </div>
+      </div>
+
+      <div class="row eg-output">
+        <div class="col-md-12">
+
+          <!--<button class="btn btn-primary" id="getDataURL2" type="button">Get Data URL (JPG)</button>-->
+
+        </div>
+        <div class="col-md-6">
+          <textarea class="form-control" id="dataURL" rows="10"></textarea>
+        </div>
+        <div class="col-md-6">
+          <div id="showDataURL"></div>
+        </div>
+      </div>
+    </div>
+  </div>	
+<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23019343-9']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+</script>
+<script type="text/javascript">
+	$("#confirm").click( function() {
+		var src = $("#picWrapper img").attr("src");
+		if(!src) {
+//			alert("请上传照片");
+		var index = layer.msg('请上传照片',function(){
+			//关闭后的操作	
+		});
+		layer.tips('点我上传', "#open_btn", {
+			tips: [4, '#78BA32']
+		});
+//			layer.msg("请上传照片");
+			return false;
+		}
+		var srcs = Array();
+		srcs = src.split(",",2);
+		
+		$("#alloy").attr("style","display:none;");
+		$("#cluster").attr("style","display: block;");
+		
+//		window.location.href = src;
+		$("div.eg-wrapper img").attr("src",src);
+		$("#cluster .preview-md img").attr("src",src);
+		test();
+
+		$('textarea').tagEditor({
+		    placeholder: '添加标签 ...'
+		});
+/////////////////////////////////////////////////////
+//$(".preview-md img").attr("src",src);
+//		$(".cropper-container img").attr("src",src);
+//		$image.cropper("replace", src);
+//		$.post(,"#myForm").serialize(), function(data) {
+//			alert(data);
+//		}
+	});
+        
+	 	var load = false;
+	 	window.onload = function(){
+	 		if(!load) {
+	 			wmark.init({
+	 				/* config goes here */
+	 				"position": "top-right", // default "bottom-right"
+	 				"opacity": 50, // default 50
+	 				"className": "watermark", // default "watermark"
+	 				"path": "message_active_03.png"
+	 			});
+			
+	 			load = true;
+	 		}
+	 	}
+        
+//
+	 $("#brand").click( function() {
+	 var pics = $("#picWrapper img");
+		
+	 //	if(pics.hasClass("watermark")) {
+	 //		return false;
+	 //	}
+	 	pics.addClass("watermark");
+		
+	 	var load = false;
+	 	if(!load) {
+	 		wmark.init({
+	 			/* config goes here */
+	 			"position": "top-right", // default "bottom-right"
+	 			"opacity": 50, // default 50
+	 			"className": "watermark", // default "watermark"
+	 			"path": "message_active_03.png"
+	 		});
+		
+	 		load = true;
+	 	}				
+	 });
+
+</script>
+<script type="text/javascript">
+//	$(document).ready( function() {
+//		$("#cluster").attr("style","display: none;");
+//		$("#alloy").attr("style","display: block;");
+//	});
+</script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="cropper.js"></script>
+  <!--<script src="/src/cropper.js"></script>-->
+  <script src="js/docs.js"></script>
+  <script src="../scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

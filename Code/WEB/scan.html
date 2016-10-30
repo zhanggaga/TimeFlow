@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Styles/scan.css" />
+    <link rel="stylesheet" type="text/css" href="scripts/layer/skin/layer.css"/>
+	<link rel="bookmark"  type="image/x-icon"  href="TimeFlow.ico"/>
+    
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+ 	<script src="scripts/ifLogin.js" type="text/javascript" charset="utf-8"></script>   
+    <script src="scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/viewPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/scan.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/search_keyWord.js" type="text/javascript" charset="utf-8"></script>
+    
+    <title>时光流影</title>
+</head>
+<body>
+    <div id="navigation">
+        <img id="logo" src="img/logo.png" />
+        <button class="no-display" id="btn_homepage" onclick="clickhref('HomePage.html')">首页</button>
+        <button class="display" id="btn_scan" onclick="clickhref('scan.html')">浏览</button>
+        <button class="no-display" id="btn_more"onclick="clickhref('userInfo.html')">个人信息</button>
+        <input type="text"  id="search"  placeholder="搜索标签、用户" />
+        <button  id="user"  onclick="clickhref('photos.html')"></button>
+        <img  id="top" src="img/top.png"/>
+    </div>
+    <div id="ClientContainer">
+    	<div id="clientHead">
+    		<span>猜你喜欢</span>
+    		<!--<button>全部</button>-->
+    	</div>
+    	<div id="clientList"></div>
+    </div>
+    <div id="PhotoContainer"></div>
+    <div id="forDeatil"></div>
+         
+</body>
+</html>

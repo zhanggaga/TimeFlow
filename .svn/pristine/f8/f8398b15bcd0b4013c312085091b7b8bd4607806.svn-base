@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="Styles/index.css" />
+		<link rel="stylesheet" href="validator/jquery.validator.css">
+		<link rel="stylesheet" type="text/css" href="Styles/layer_skin.css"/>
+		<title>时光流影</title>
+	</head>
+	<body>
+		<div id="container">
+			<button class="display" id="btn_register">注册</button><button class="no-display" id="btn_login">登录</button><button class="no-display" disabled="none">下载APP</button>
+			<div id="formContainer">				
+				<div id="register">	
+					<div id="other"><img src="img/index_weibo_register.png"/><br /><img src="img/inde_qq_register.png" alt="" /><br /><img src="img/index_wechat_register.png"/></div>
+					<img src="img/index_or.png"/>
+					<form action="Register.aspx" method="post"name="register" id="form_register">
+						<div id="putinArea">
+							<input type="text" name="type" style="display: none;" id="register_type" value=""/>
+							<input type="text" name="username" id="username" value="" placeholder="邮箱/手机号" /><br />
+							<input type="password" name="password" placeholder="密码"/><br />
+							<input type="password" name="re-password" placeholder="确认密码"/><br />
+							<!--<input type="text" name="testcode" id="testcode" value="" placeholder="验证码"/><br />-->								
+						</div>
+						<button type="submit" id="submit_register"disabled="disabled">注册</button>		
+					</form>
+				</div>	
+				<div id="login" style="display: none;">
+					<div id="other"><img src="img/index_weibo_login.png"/><br /><img src="img/inde_qq_login.png" alt="" /><br /><img src="img/index_wechat_login.png"/></div>
+					<img src="img/index_or.png"/>					
+					<form action="Login.aspx" method="post" name="login" id="form_login">
+						<div id="putinArea">
+							<input type="text" name="type" style="display: none;" id="login_type" value=""/>
+							<input type="text" name="username"  value="" placeholder="邮箱/手机号" /><br />
+							<input type="password" name="password" placeholder="密码"/><br />
+							<!--<input type="password" name="re-password" placeholder="确认密码"/><br />-->
+							<div id="testcodeArea">		
+                            	<img src="ValidateCode.aspx"  alt="Veritication" />
+								<input type="text" name="testcode" id="testcode" value="" placeholder="验证码"/>
+								<!--<input type="text" hidden="hidden" value=""name="true_testcode"/>-->
+							</div>							
+						</div>
+						<button type="submit" id="submit_login"disabled="disabled">登录</button>
+						<!--<input type="submit" value="登录"id="submit"/>-->
+					</form>
+				</div>					
+			</div>
+		</div>
+		<script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+		<script type="text/javascript" src="scripts/layer/layer.js"></script>
+        <script type="text/javascript" src="validator/jquery.validator.js"></script>
+        <script type="text/javascript" src="validator/local/zh-CN.js"></script>
+		<script src="scripts/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

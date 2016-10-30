@@ -1,0 +1,270 @@
+﻿body{
+    background-color:rgb(237,237,239);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.com-no-display {
+    display: none;
+}
+.com-display {
+    display: block;
+}
+button {
+    cursor:pointer;
+}
+#navigation {
+    background-color: rgb(36,41,44);
+    height:80px;
+}
+#navigation #logo {
+    margin-left:120px;
+    margin-top:4px;
+}
+#navigation button {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	background-color: rgb(36,41,44);
+    position: relative;
+    bottom: 20px;
+	margin-left: 55px;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	border: 0;
+}
+#navigation button.display {
+	color: white;
+}
+#navigation button.no-display {
+	color: gray;
+}
+#navigation button:hover {
+	color: white;
+}
+#navigation input {
+    border-style: none;
+    width: 220px;
+    height: 27px;
+    background-color:black;
+    border-radius: 30px;
+    margin-left: 150px;
+    position: relative;
+    bottom: 22px;
+    padding-left:35px;
+    background-image:url(../img/fangda.png);
+    background-position-x:10px;
+    background-position-y:8px;
+    background-repeat:no-repeat;
+    color:white;
+}
+
+#navigation #user {
+    background-image: url(../img/user.png); 
+    width: 28px;
+    height: 30px;
+    margin-left: 130px;
+    position: relative;
+    bottom: 25px;
+}
+
+div#container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:SimHei;
+    color: #444;
+}
+div#container #userArea {
+    margin-top: 60px;
+    border: 1px solid rgba(198,198,198,0.8);
+    height: 190px; 
+    background-color: rgb(250, 250,250);
+    /*background-image: url("../img/bc3.png");*/
+    background-repeat:no-repeat;
+    background-size: 80px;
+    background-position-y: 20px;
+    background-position-x: 20px;
+    box-shadow: 1px 2px 1px #aaa;
+}
+div#container #myPhoto {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 100px;
+    /*height: 50*/
+}
+div#container #userintro {
+    display: block;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+#userintro #textDetail {
+	float: right;
+	position: relative;
+	right: 510px;
+}
+#followBtn {
+	margin-left: 15px;
+	border: 1px solid rgba(198,198,198,0.8);
+	background-color: #fff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 18px;
+	padding-right: 18px;	
+	color: #204D74;
+}
+#userintro #textDetail:hover {
+	cursor: default;
+}
+#userintro #imgDetail img{
+	width: 80px;
+}
+div#container #userintro > span {
+    font-family:SimHei;
+}
+div#container #userintro > span:first-child {
+    font-size: 20px;
+    color: #000;
+}
+div#container #userintro > span:last-child {
+    color: gray;
+    position: relative;
+    top: 20px;
+}
+div#container #userInfor {
+    height: 40px;
+}
+div#container #userInfor div{
+    float: left;
+    border: 1px solid #999;
+    text-align: center;
+    padding-left: 82px;
+    padding-right: 82px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 0;
+    font-family:SimHei;
+    color: gray;
+}
+div#container #userInfor #follower {
+    color: #49a2ed;
+}
+div#container #userInfor div:hover {
+    cursor: pointer;
+    color: #49a2ed;
+}
+div#container #userInfor div:first-child {
+    border-left: 0;
+    padding-left: 85px;
+}
+div#container #userInfor div:last-child {
+    border-right: 0;
+    padding-right:87px;
+}
+div#container #followerList {
+    margin-top: 80px;
+    background-color: rgb(250, 250,250);
+    border: 1px solid rgba(198,198,198,0.8);
+    box-shadow: 1px 2px 1px #aaa;
+}
+#followerList #followerCount {
+    padding-left: 20px;
+    word-spacing: 4px;
+    border-bottom: 1px solid #999;
+    color:gray;
+}
+#followerList #detail .detail_one{
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-family: "微软雅黑";
+    border-bottom: 1px solid #999;
+}
+#followerList #detail .follow_0,#followerList #detail .follow_1 {
+    float: right;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 15px;
+    font-family: "微软雅黑";
+    border-radius: 3px;
+    border: 1px solid #49a2ed;
+    color: #49a2ed;
+    margin-right: 20px;
+    word-spacing: 10px;
+}
+#followerList #detail .textDetail {
+    float: right;
+    position:relative;
+    right: 180px;
+    top: -6px;
+    width: 400px;
+}
+#followerList .detail_one:hover {
+	cursor: default;
+}
+#followerList #followerCount p {
+	cursor: default;
+}
+#followerList .textDetail span:hover{
+	cursor: default;
+}
+#followerList span.detail_name:hover {
+	cursor: pointer;
+}
+#followerList #detail .imageDetail:hover {
+	cursor: pointer;
+}
+#followerList #detail .imageDetail {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 80px;
+}
+#followerList #detail .detail_ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#followerList #detail .detail_ul li {
+    display: inline; 
+}
+#followerList #detail .detail_one .detail_name {
+    font-size:20px;
+    
+}
+#followerList #detail .detail_li_title {
+	color: gray;
+}
+/*#followerList #detail #demoOne ul li span, div#container #followerList #detail #demoOne  ul + span, div#container #followerList #detail #demoOne  span{
+    color: gray;
+    font-size: 18px;
+    font-family:Arial;
+}*/
+/*div#container #followerList #detail #demoOne #demoName, div#container #followerList #detail #demoOne .detail {
+    color: #000;
+}*/
+div#container #followerList #detail  img.othersPic {
+    width: 80px;
+}
+
+#more{
+    width: 800px;
+    margin:0 auto;
+    margin-top:1250px;
+    background-color:rgb(237,237,239);
+    border:none;
+}
+#more_logo {
+    width: 122px;
+    height: 116px;
+    border: none;
+    background-image: url(../img/more.png);
+    background-color:rgb(237,237,239);
+    margin-left:42%;
+}

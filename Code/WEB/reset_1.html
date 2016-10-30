@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js" ></script>
+    <title></title>
+    <style type="text/css">
+        #content1 {
+     margin-left:40%;
+      margin-top:20%;
+        }
+        input {
+            width:300px;
+            height:30px;
+        }
+       button {
+          background-color: #8db800;
+	color: white;
+	width: 100px;
+	height: 35px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	letter-spacing: 10px;
+	margin-top: 20px;
+	border: 0;
+	margin-left: 100px;
+	line-height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content1" >
+        <form action="ForgetPsw.aspx" method="post" name="reset1" id="form1" >
+        <input id="1" type="text" name="email" placeholder="请输入邮箱号" /><br />
+        <button id="2" type="submit" >下一步</button>
+            </form>
+    </div>
+    
+</body>
+    <script>
+        $("#2").click(function () {
+            $.post("ForgetPsw.aspx",
+                $("#form1").serialize(),//表单数据序列化
+                function (data) {
+                    if (data == "success") {
+                        alert("请到邮箱重置密码");
+                    } else {
+                        alert("邮箱不存在，请重新输入");
+                    }
+                }
+            );
+        });
+    </script>
+</html>
